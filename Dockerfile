@@ -40,4 +40,8 @@ RUN apt-get update -yqq \
   && docker-php-ext-enable imagick \
   && docker-php-source delete
 
-ENTRYPOINT ["docker-php-entrypoint"]
+COPY clone-shopware /usr/local/bin/
+
+ENTRYPOINT ["clone-shopware"]
+
+CMD ["php", "-a"]
