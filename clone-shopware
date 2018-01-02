@@ -1,6 +1,10 @@
 #!/usr/bin/env bash
 
-mkdir -p /opt
-[ -d /opt/shopware-${SHOPWARE_VERSION} ] || git clone -b v${SHOPWARE_VERSION} --depth 1 https://github.com/shopware/shopware.git /opt/shopware-${SHOPWARE_VERSION}
-cd /opt/shopware-${SHOPWARE_VERSION} && git reset --hard
-chmod -R 755 /opt/shopware-${SHOPWARE_VERSION}/var && chmod -R 755 /opt/shopware-${SHOPWARE_VERSION}/web && chmod -R 755 /opt/shopware-${SHOPWARE_VERSION}/files && chmod -R 755 /opt/shopware-${SHOPWARE_VERSION}/media && chmod -R 755 /opt/shopware-${SHOPWARE_VERSION}/engine/Shopware/Plugins/Community
+mkdir -p "${1}/opt"
+[ -d /opt/shopware-${2} ] || git clone -b v${2} --depth 1 https://github.com/shopware/shopware.git "${1}/opt/shopware-${2}"
+cd "${1}/opt/shopware-${2}" && git reset --hard
+chmod -R 755 "${1}/opt/shopware-${2}/var"
+chmod -R 755 "${1}/opt/shopware-${2}/web"
+chmod -R 755 "${1}/opt/shopware-${2}/files"
+chmod -R 755 "${1}/opt/shopware-${2}/media"
+chmod -R 755 "${1}/opt/shopware-${2}/engine/Shopware/Plugins/Community"

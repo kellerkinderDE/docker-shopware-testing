@@ -41,7 +41,3 @@ RUN apt-get update -yqq \
   && docker-php-source delete
 
 COPY clone-shopware /usr/local/bin/
-
-ENTRYPOINT ["clone-shopware"]
-
-CMD ["php", "-a"]
