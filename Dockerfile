@@ -1,4 +1,4 @@
-FROM php:7.0-cli
+FROM php:7.1-cli
 
 MAINTAINER Uwe Kleinmann <u.kleinmann@kellerkinder.de>
 
